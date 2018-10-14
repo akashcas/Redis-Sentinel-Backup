@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#author=akash agrawal
 # We can run this script from any redis sentinel but backup will always be taken from MATER node.
 role_cluster=$(redis-cli info | grep role |awk --field-separator=":" '{print $2}'| rev | cut -c 2- | rev | head --bytes -1) #find the role of cluster
 master_ip=$(redis-cli info | grep master_host|awk --field-separator=":" '{print $2}'| rev | cut -c 2- | rev | head --bytes -1) #Find the mster IP
